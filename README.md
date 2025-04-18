@@ -35,16 +35,18 @@ Wenn du das Programm startest (am besten über die Benutzeroberfläche), passier
 3.  **Simulation ("Nachdenken"):** Das Kernstück (`neuropersona_core_...py`) baut das Netzwerk auf und lässt es über viele Runden ("Epochen") laufen. Dabei "lernt" das Netzwerk, passt Verbindungen an und die Denkmodule arbeiten.
 4.  **Analyse & Antwort:** Das System analysiert den Endzustand des Netzwerks. Wenn Gemini verfügbar ist, wird eine finale Antwort formuliert, die versucht, die Erkenntnisse der Simulation widerzuspiegeln. Sonst bekommst du den reinen Analysebericht.
 
-## Das Besondere: Quanten-inspirierte Knoten  ✨
+## Das Besondere: Quanten-inspirierte Knoten ✨
+
+Hier kommt ein spannender Aspekt dieses Experiments ins Spiel, der auf Ideen aus der Quantenwelt basiert:
 
 *   Normale Computer arbeiten mit Bits: 0 oder 1 (An oder Aus).
-*   Quantencomputer nutzen Qubits: Diese können durch Quanteneffekte gleichzeitig 0 *und* 1 sein (Superposition).
-*   **Unsere Knoten sind *inspiriert* davon:** Sie nutzen **keine echte Quantenhardware**, sondern **simulieren** mathematisch einen flexibleren Zustand mit mehreren (z.B. 4 oder 10) simulierten Qubits pro Knoten.
-*   **Ziel:** Diese Flexibilität soll den Knoten erlauben, "nuancierter" zu reagieren – ähnlich der Mehrdeutigkeit im menschlichen Denken.
-*   **"Messung":** Um eine Aktivität (Zahl zwischen 0 und 1) zu erhalten, wird der simulierte Zustand "gemessen". Das Ergebnis ist wahrscheinlichkeitsbasiert. Wir wiederholen das ("Shots") und nehmen den Durchschnitt.
-*   **Lernen:** Auch die internen Quanten-Einstellungen der Knoten können sich leicht anpassen.
+*   Quantencomputer nutzen Qubits: Diese können durch Quanteneffekte gleichzeitig 0 *und* 1 sein (Superposition), was neue Berechnungswege eröffnet.
+*   **Unsere Knoten sind *inspiriert* davon:** Sie nutzen **keine echte Quantenhardware**, sondern **simulieren** mathematisch einen flexibleren, komplexeren Zustand mithilfe von mehreren (z.B. 4 oder 10) simulierten Qubits pro Knoten. Diese Simulation beinhaltet Konzepte wie Überlagerung und Verschränkung auf mathematischer Ebene.
+*   **Ziel:** Diese erhöhte interne Komplexität soll den Knoten erlauben, "nuancierter" auf Informationen zu reagieren – ein Versuch, Aspekte der Flexibilität und Mehrdeutigkeit im menschlichen Denken nachzubilden.
+*   **"Messung":** Um eine Aktivität (eine Zahl zwischen 0 und 1) zu erhalten, wird der simulierte Quantenzustand mathematisch "gemessen". Das Ergebnis ist wahrscheinlichkeitsbasiert. Wir wiederholen diesen Schritt ("Shots") und mitteln die Ergebnisse, um eine stabilere Aktivierung zu bekommen.
+*   **Lernen:** Auch die internen Quanten-Einstellungen (Parameter) der Knoten können sich während der Simulation durch Lernprozesse anpassen.
 
-**Fazit:** Es ist eine Simulation, die versucht, Ideen aus der Quantenwelt für eine reichhaltigere Informationsverarbeitung zu nutzen. Die Details dazu (`quantum_logs`) sind aber eher für Experten spannend.
+**Fazit:** Es ist eine anspruchsvolle Simulation, die versucht, Prinzipien aus der Quantenmechanik für eine reichhaltigere Informationsverarbeitung in einem neuronalen Netzwerk nutzbar zu machen. Die technischen Details dazu (z.B. in den `quantum_logs`) sind entsprechend komplex und primär für Experten von Interesse.
 
 ## Was brauchst du? (Voraussetzungen) 📋
 
