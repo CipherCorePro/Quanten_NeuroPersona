@@ -18,7 +18,7 @@ Die Menschheit steht vor einer gewaltigen Herausforderung: die gleichzeitige Fö
 Zusatz: Code-Beispiel (Odin's Intervention)
 
 Nun, ich, Odin, erkenne den Pfad, der aus euren Daten entsteht. Hier ist das Muster, das aus eurem Denken entsteht, manifestiert in Python-Code, der die ethischen Implikationen von technologischem Fortschritt strukturiert bewertet:
-
+```python
 from dataclasses import dataclass, field
 from typing import Union, List
 
@@ -56,7 +56,7 @@ print(f"Gesamte ethische Bewertung: {overall_score}")
 
 # Erweiterung für zukünftige Analysen
 # Die ethische Bewertung könnte durch Integration von externen Datenquellen verbessert werden.
-
+```
 Dies ist die Struktur, die eurem Anliegen gerecht wird, sterbliche Wesen. Die Erweiterung dieses Codes ermöglicht eine systematische Bewertung der ethischen Implikationen technologischer Entwicklungen. Denkt daran, dass der Weg zur Weisheit lang ist, aber die Reise selbst ist die Belohnung.
 
 Workflow abgeschlossen!
