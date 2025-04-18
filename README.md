@@ -1,5 +1,6 @@
-```markdown
+
 # NeuroPersona (Quantum Hybrid Edition - Experimentell)
+![image](https://github.com/user-attachments/assets/b8b36e59-c54a-4733-a678-a7d50fb2c180)
 
 **Version:** 2.1 (QH - Quantum Hybrid)
 **Basierend auf:** NeuroPersona QH-Manifest v1.1
