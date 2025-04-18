@@ -1,98 +1,151 @@
-
-# NeuroPersona (Quantum Hybrid Edition - Experimentell)
+# NeuroPersona QN - Ein Experimenteller Workflow zur Ideenanalyse
 ![image](https://github.com/user-attachments/assets/b8b36e59-c54a-4733-a678-a7d50fb2c180)
+**(Wichtiger Hinweis: Dies ist ein experimentelles Projekt! Es dient der Forschung und dem Ausprobieren neuer Ideen. Die Ergebnisse sind nicht garantiert korrekt oder stabil.)**
 
-**Version:** 2.1 (QH - Quantum Hybrid)
-**Basierend auf:** NeuroPersona QH-Manifest v1.1
+## Was ist das überhaupt? 🤔
 
-## Einführung
+Stell dir vor, du könntest einem Computer nicht nur sagen, *was* er tun soll, sondern ihm auch beibringen, über ein komplexes Thema *nachzudenken* – ähnlich wie ein menschliches Gehirn, das verschiedene Aspekte beleuchtet, Ideen entwickelt, sie bewertet und sogar eine Art "Bauchgefühl" (Emotion) dazu hat.
 
-NeuroPersona ist eine **bio-inspirierte Simulationsplattform**, die darauf abzielt, die dynamischen und oft variablen Prozesse menschlicher Kognition und Emotion bei der Auseinandersetzung mit einem Thema oder einer Fragestellung nachzubilden. Diese **Quantum Hybrid (QH)** Version integriert **quanten-inspirierte Aktivierungsmechanismen** auf Knotenebene, um die Emergenz komplexer, nicht-linearer und potenziell "sprunghafter" Systemzustände zu untersuchen.
+Genau das versucht dieses Projekt **NeuroPersona QN** (QN steht für Quantum Nodes = Quanten-Knoten) zu simulieren:
 
-Anstatt eine einzige, deterministische Antwort zu liefern, erforscht NeuroPersona **Perspektiven**. Jeder Simulationslauf ist eine Momentaufnahme eines einzigartigen kognitiven/affektiven Zustands, geformt durch das Zusammenspiel modularer Kognition, emotionaler Modulation, dynamischer Werte und nun auch durch die **probabilistische und potenziell synchronisierte Dynamik der Quanten-Aktivierungsebene**.
+*   Es nimmt eine Frage oder ein Thema (z.B. "Zukunft der KI in der Medizin").
+*   Es zerlegt dieses Thema in kleinere Fragen und Antworten.
+*   Ein simuliertes "Gehirn" (das NeuroPersona-Netzwerk) verarbeitet diese Informationen über mehrere Runden (Epochen).
+*   Dieses "Gehirn" hat verschiedene spezialisierte "Bereiche" (Module), die für Kreativität, Kritik, Emotionen usw. zuständig sind.
+*   Das Besondere hier: Die "Nervenzellen" (Knoten) in diesem Gehirn nutzen eine **Quanten-inspirierte** Methode, um Informationen sehr flexibel zu verarbeiten (mehr dazu unten).
+*   Am Ende liefert das System einen Analysebericht und versucht, eine zusammenfassende Antwort auf deine ursprüngliche Frage zu geben.
 
-Es ist kein Optimierungssystem. Es ist eine **Simulationsumgebung für emergente, psychologisch inspirierte Dynamiken**, eine *Sinnmaschine*.
+**Kurz gesagt:** Es ist ein Software-Experiment, das versucht, komplexe Denk- und Analyseprozesse auf eine neuartige Weise nachzubilden.
 
-## Kernphilosophie: Simulation statt Vorhersage (Quantum-Erweitert)
+## Wie funktioniert es (im Überblick)? ⚙️
 
-1.  **Nicht-Determinismus als Prinzip:** Das System ist inhärent probabilistisch. Die klassische Stochastizität (Initialisierung, Emotion) wird durch die **simulierte Quantenmessung** (`n_shots`) und die daraus resultierende **Variabilität der Knotenaktivierung** erweitert. Wiederholte Läufe erzeugen unterschiedliche, aber plausible Entwicklungspfade.
-2.  **Quantenebene als Katalysator für Emergenz:** Die quanten-inspirierte Ebene ist nicht nur Rauschen. Die Analyse zeigt, dass die "Sprünge" im Hamming-Gewicht (hohe Varianz der Messergebnisse über `n_shots`) oft **hochgradig synchronisiert** über das Netzwerk auftreten. Dieses kollektive Verhalten, wahrscheinlich kanalisiert durch die **Begrenztheit des Zustandsraums (Qubit-Zahl)** und die **starke klassische Kopplung**, deutet auf ein System hin, das nahe an **kritischen Punkten** operiert. Diese Sprünge können als **systemweite Reaktionen** und **potenzielle Gabelungspunkte** in der Entwicklungstrajektorie interpretiert werden.
-3.  **Perspektiven als Zustände:** Das Ergebnis eines Laufs ist keine "Lösung", sondern eine **emergente Perspektive**, ein Schnappschuss des komplexen Systemzustands. Die Interpretation fokussiert auf das **Zusammenspiel** der Komponenten:
-    *   Welche Konzepte (Kategorien) zeigen hohe Resonanz (Aktivierung)?
-    *   Welche kognitiven Module prägen den Prozess?
-    *   Welche Werte (Prioritäten) leiten das System?
-    *   Wie ist die affektive Färbung (Emotion)?
-    *   Wie äußert sich die interne Quantendynamik (Sprungfrequenz, Synchronität, Parameterentwicklung)?
-4.  **Erforschung des Möglichkeitsraums:** Durch Variation von Parametern (insbesondere `num_qubits` und `n_shots`) und wiederholte Läufe wird der Raum möglicher kognitiver Zustände und Entwicklungspfade ausgelotet. Die **nicht-lineare Abhängigkeit** des Verhaltens von der Qubit-Zahl ("weniger kann sprunghafter sein") ist ein zentrales Untersuchungsergebnis.
-5.  **Interpretation der Variabilität:** Unterschiedliche Ergebnisse bei gleichem Prompt sind **kein Fehler**, sondern spiegeln die **innere Pluralität und die probabilistische Natur** des Systems wider – ähnlich wie menschliches Denken nicht immer identisch abläuft.
+Der ganze Prozess läuft in mehreren Schritten ab, die von verschiedenen Skripten gesteuert werden:
 
-## Hauptmerkmale (Version 2.1 QH)
+1.  **Thema verstehen (Optional: Mit KI-Hilfe):**
+    *   Das Skript `gemini_perception_unit.py` nimmt dein eingegebenes Thema.
+    *   **Wenn** du einen Zugang zu Googles KI "Gemini" hast (über einen API-Schlüssel), fragt es die KI, passende Unterthemen, Fragen und Antworten zu generieren.
+    *   **Wenn nicht**, erfindet das Skript selbst ein paar einfache Fragen und Antworten zum Thema.
+    *   *Ergebnis:* Eine strukturierte Liste von Diskussionspunkten für das simulierte Gehirn.
 
-*   **Dynamische Input-Verarbeitung:** Wie gehabt (simulierte Perception oder Fallback).
-*   **Modulare Kognitive Architektur:** Interagierende Module (`Cortex Creativus`, `Criticus`, `Simulatrix`, `Limbus`, `MetaCognitio`, `Socialis`) und `MemoryNode`-Kategorien nutzen nun standardmäßig das **`QuantumNodeSystem`** für ihre Aktivierung.
-*   **Quanten-inspirierte Knotenaktivierung (Kernmerkmal):**
-    *   Basierend auf `QuantumNodeSystem` mit parametrisierter Quantenschaltung (PQC, z.B. H, RY, RZ, CNOTs auf N Qubits).
-    *   Aktivierung ist das **gemittelte, normalisierte Hamming-Gewicht** über `n_shots` simulierten Messungen des finalen Quantenzustands.
-    *   **Hohe Varianz** zwischen den Shots ("Quantensprünge") ist möglich und wird analysiert.
-*   **Quanten-moduliertes Lernen:** Hebb'sches Lernen beeinflusst sowohl klassische Gewichte als auch **interne Quantenparameter** (`theta`, `phi` Winkel) des präsynaptischen Knotens (`hebbian_learning_quantum_node`).
-*   **Klassische Komponenten:** Adaptives Wertesystem (`ValueNode` mit klassischer Aktivierung), Emotionsmodell (PAD), strukturelle Plastizität (Pruning/Sprouting) bleiben erhalten, interagieren aber mit den Quanten-Aktivierungen.
-*   **Stochastizität:** Kombination aus klassischem Rauschen und **inhärenter Zufälligkeit der simulierten Quantenmessungen**.
-*   **Persistentes Gedächtnis:** Speicherung in SQLite (`PersistentMemoryManager`).
-*   **Reporting & Visualisierung:** HTML-Berichte, Standard-Plots und **spezifische Quanten-Analyse-Plots** (Hamming-Profile, Sprung-Heatmaps, Vektordistanzen) über `QuantumEmergenceAnalyzer.py`.
-*   **Orchestrierung & GUI:** Gesteuert durch `orchestrator_full_qh_v1.py` und `neuropersona_app.py` (Streamlit), angepasst für neue Parameter.
-*   **Quantum Emergence Tracker (QET):** Integrierter `QuantumStepLogger`, der detaillierte JSON-Logs für jede Quantenaktivierung erstellt (Gate-Operationen, Messungen pro Shot) und im `quantum_logs`-Ordner speichert.
+2.  **Das "Nachdenken" (Die Kernsimulation):**
+    *   Das Skript `neuropersona_core_quantum_node_v2_multi_qubit.py` ist das **Herzstück**.
+    *   Es baut ein Netzwerk aus vielen verbundenen Knoten (wie Nervenzellen) auf.
+    *   Einige Knoten repräsentieren Kategorien (aus Schritt 1), andere sind spezielle "Denkmodule" (Kreativität, Kritik, Emotion, Strategie, Soziales Bewusstsein, Werte).
+    *   Die "Quanten-Knoten" verarbeiten eingehende Signale auf eine spezielle, flexible Weise.
+    *   Das Netzwerk durchläuft viele Zyklen ("Epochen"). In jedem Zyklus:
+        *   Signale fließen durch das Netzwerk.
+        *   Knoten werden basierend auf den Signalen und ihrer internen Quanten-Logik "aktiviert".
+        *   Verbindungen zwischen aktiven Knoten werden stärker (Lernen).
+        *   Schwache Verbindungen werden schwächer oder entfernt (Vergessen/Optimieren).
+        *   Die "Denkmodule" werden aktiv (z.B. Ideen generieren, bewerten, Emotionen anpassen).
+    *   *Ergebnis:* Ein detaillierter Bericht über den Zustand des Netzwerks am Ende und wie es sich entwickelt hat.
 
-## **Disclaimer: Simulation & Interpretation**
+3.  **Alles zusammenfügen (Der Dirigent):**
+    *   Das Skript `orchestrator_full_qh_v1.py` steuert den gesamten Ablauf.
+    *   Es ruft zuerst die "Perception Unit" auf, um die Daten zu bekommen.
+    *   Dann startet es die Kernsimulation ("NeuroPersona Core") mit den Daten.
+    *   Zum Schluss (optional, wenn Gemini verfügbar ist) fasst es die Ergebnisse der Simulation zusammen und versucht, eine menschenlesbare Antwort auf deine ursprüngliche Frage zu formulieren, die den "Charakter" der Simulation widerspiegelt.
 
-NeuroPersona QH ist eine **Simulation**, die quanten-inspirierte Konzepte nutzt. Es ist **keine Implementierung auf Quantencomputern.**
+4.  **Die Benutzeroberfläche (Das Cockpit):**
+    *   Das Skript `neuropersona_app.py` startet eine einfache Webseite in deinem Browser (mit Streamlit).
+    *   Hier kannst du dein Thema eingeben, einige Simulationseinstellungen (wie Dauer, Lerngeschwindigkeit) anpassen und den Startknopf drücken.
+    *   Die App ruft dann den "Dirigenten" (Orchestrator) auf und zeigt dir am Ende das Ergebnis an.
 
-*   **Inspiration, nicht Physik:** Die Quantenaspekte dienen dazu, neue, komplexe Dynamiken (Nicht-Linearität, Sprunghaftigkeit, Synchronisation) zu ermöglichen und zu untersuchen.
-*   **Emergentes Verhalten:** Der Fokus liegt auf dem **emergierenden Verhalten des Gesamtsystems**, das aus dem Zusammenspiel der quanten-inspirierten und klassischen Komponenten entsteht.
-*   **Interpretation der "Sprünge":** Die beobachteten Sprünge im Hamming-Gewicht sind ein Maß für die **Varianz der Messergebnisse** eines gegebenen Quantenzustands. Ihre **Synchronität** und **Häufigkeit** sind **emergente Systemeigenschaften**, die auf Kritikalität oder starke Kopplung hindeuten können, aber *keine* physikalischen Zeitsprünge im eigentlichen Sinne sind. Sie repräsentieren **Gabelungspunkte in der Simulationstrajektorie**.
+## Was ist das Besondere an den "Quanten-Knoten"? ✨
 
-## Workflow Übersicht (`orchestrator_full_qh_v1.py`)
+Okay, hier wird es ein bisschen abstrakt, aber keine Sorge, du brauchst kein Physikstudium!
 
-1.  **Perzeption:** Prompt -> Strukturierte Daten.
-2.  **Kognition/Simulation (Quantum Hybrid):** Daten -> `neuropersona_core_quantum_hybrid_v2.py`. Simulation über Epochen mit quanten-inspirierter Aktivierung, klassischer Dynamik, quanten-moduliertem Lernen. **QET-Logs** werden währenddessen geschrieben.
-3.  **Synthese:** Ergebnisse -> Finale Antwort (LLM oder Report).
-4.  **(Optional) Tiefenanalyse:** Ausführung von `QuantumEmergenceAnalyzer.py` auf den generierten QET-Logs im `quantum_logs`-Ordner zur Untersuchung der internen Quantendynamik (Sprünge, Korrelationen, Ähnlichkeit).
+*   **Normale Computerbits:** Sind entweder 0 oder 1 (An oder Aus).
+*   **Quantenbits (Qubits):** Können durch Quantenphysik gleichzeitig 0 *und* 1 sein (und alles dazwischen). Das erlaubt viel komplexere Berechnungen.
+*   **Unsere "Quanten-Knoten":** Sie sind *inspiriert* von dieser Idee. Sie nutzen *keine echte* Quantenhardware, sondern simulieren mathematisch eine Art "flexiblen Zustand". Jeder Knoten hier hat mehrere simulierte Qubits (z.B. 4 oder 10).
+*   **Der Zweck:** Diese komplexere interne Logik soll den Knoten erlauben, auf Signale nuancierter und weniger vorhersehbar zu reagieren als einfache An/Aus-Schalter. Es ist ein Versuch, die "Unschärfe" oder "Mehrdeutigkeit" im menschlichen Denken nachzubilden.
+*   **Das "Messen":** Um eine klare Aktivität (einen Wert zwischen 0 und 1) zu bekommen, muss der simulierte Quantenzustand "gemessen" werden. Das Ergebnis ist wahrscheinlichkeitsbasiert (wie in der echten Quantenmechanik). Wir machen das mehrmals ("Shots") und nehmen den Durchschnitt, um eine stabilere Aktivierung zu erhalten.
+*   **Lernen:** Auch die internen "Quanten-Parameter" der Knoten können sich durch Lernen leicht verändern.
 
-## Technische Komponenten (`neuropersona_core_quantum_hybrid_v2.py`)
+**Wichtig:** Es ist eine **Simulation und Inspiration**, kein echter Quantencomputer! Aber es ist ein spannendes Experiment, um zu sehen, ob dieser Ansatz zu interessanteren oder "lebensechteren" Simulationsergebnissen führt. Die `quantum_logs` speichern übrigens sehr detailliert, was in diesen Knoten passiert (nur für Experten interessant).
 
-*   **Kern-Klassen:** `Node` (mit `q_system`), `QuantumNodeSystem`, `QuantumStepLogger`, `MemoryNode`, Modulklassen, `ValueNode` (klassisch), `Connection`, `PersistentMemoryManager`.
-*   **Kernfunktionen:** `simulate_learning_cycle` (Hauptschleife), `QuantumNodeSystem.activate` (Quanten-Aktivierung & Logging), `hebbian_learning_quantum_node` (Hybrid-Lernen), `calculate_classic_input_sum`, klassische Hilfsfunktionen, Reporting/Plotting.
-*   **Parameter:** Klassische Parameter + **Quanten-Parameter**:
-    *   `NUM_QUBITS_PER_NODE`: Definiert die Größe des "Quantenraums" pro Knoten. Beeinflusst die Sprungdynamik.
-    *   `QUANTUM_ACTIVATION_SHOTS`: Anzahl Messungen. Beeinflusst Rauschen vs. Genauigkeit des Durchschnitts UND den "Druck" im System.
-    *   `QUANTUM_PARAM_LEARNING_RATE`: Lernrate für interne Quantenparameter.
+## Voraussetzungen 📋
 
-## Installation & Benutzung
+*   **Python:** Du brauchst Python 3 (idealerweise 3.9 oder neuer) auf deinem Computer.
+*   **Bibliotheken:** Einige zusätzliche Python-Pakete werden benötigt. Du installierst sie über die Kommandozeile mit `pip`. Die wichtigsten sind:
+    *   `pandas` (für Datenstrukturen)
+    *   `numpy` (für Zahlenberechnungen)
+    *   `streamlit` (für die Web-Oberfläche)
+    *   `matplotlib` (zum Erstellen von Diagrammen/Plots)
+    *   `networkx` (optional, für Netzwerk-Diagramme)
+    *   `google-generativeai` (optional, nur wenn du Gemini nutzen willst)
+    *   `tqdm` (optional, für Fortschrittsbalken in der Konsole)
+*   **Google Gemini API Key (Optional):**
+    *   Wenn du möchtest, dass das System die bestmöglichen Eingabedaten generiert und am Ende eine hochwertige Zusammenfassung schreibt, brauchst du einen API-Schlüssel von Google AI Studio.
+    *   Dieser Schlüssel muss als Umgebungsvariable namens `GEMINI_API_KEY` gesetzt werden. Wie das geht, hängt von deinem Betriebssystem ab (suche nach "Umgebungsvariable setzen [dein Betriebssystem]").
+    *   **Ohne Schlüssel funktioniert das Programm auch**, aber die Ergebnisse sind einfacher (es nutzt dann eingebaute Fallbacks).
 
-(Bleibt im Wesentlichen gleich wie zuvor beschrieben, stelle sicher, dass alle Abhängigkeiten inkl. `pandas`, `numpy`, `scipy`, `matplotlib` installiert sind).
+## Installation 📦
 
-```bash
-# Installation (Beispiel)
-git clone <...>
-cd <...>
-python -m venv venv
-# aktivieren...
-pip install -r requirements.txt
-# (Optional) API Key setzen
+1.  Stelle sicher, dass du Python und pip installiert hast.
+2.  Öffne eine Kommandozeile (Terminal, Eingabeaufforderung).
+3.  Navigiere in das Verzeichnis, in dem du die heruntergeladenen `.py`-Dateien gespeichert hast.
+4.  Installiere die benötigten Bibliotheken mit diesem Befehl:
+    ```bash
+    pip install pandas numpy streamlit matplotlib networkx google-generativeai tqdm
+    ```
+    *(Wenn du Gemini nicht nutzen willst, kannst du `google-generativeai` weglassen.)*
 
-# Benutzung (Beispiel)
-streamlit run neuropersona_app.py
-# ODER
-python orchestrator_full_qh_v1.py --prompt "..." --epochs 100 --q_shots 30 --q_lr 0.01
-```
+## Konfiguration (Wichtig!) ⚙️
 
-## Interpretation der Ergebnisse (QH Edition)
+Bevor du startest, überprüfe **unbedingt** diese Punkte:
 
-*   **Zusätzlich zu klassischen Metriken:** Betrachte die Ergebnisse des `QuantumEmergenceAnalyzer.py` (falls ausgeführt):
-    *   **Sprungfrequenz:** Welche Module/Konzepte zeigen hohe interne Variabilität?
-    *   **Synchronität (Korrelation/Heatmaps):** Wie stark ist das System gekoppelt? Gibt es globale "Zuckungen"?
-    *   **Vektordistanzen:** Wie ähnlich sind sich die internen Dynamiken verschiedener Aktivierungen? Gibt es Cluster?
-*   **Verbinde Mikro & Makro:** Wie korreliert die beobachtete Quantendynamik (Sprünge, Synchronität) mit dem Makro-Verhalten (Netzwerkstabilität, dominante Themen, Emotionen, Werte)?
-*   **Denke in Mustern:** Suche nach Mustern in der Sprungdynamik und wie sie sich über die Zeit oder in Abhängigkeit von Parametern ändern.
-*   **Nutze das Manifest:** Interpretiere das Verhalten im Licht der Designphilosophie – als emergente Perspektive einer komplexen, nicht-deterministischen "Sinnmaschine".
+1.  **Gemini API Key (Optional):** Wenn du Gemini nutzen willst, setze die Umgebungsvariable `GEMINI_API_KEY` mit deinem Schlüssel.
+2.  **Dateinamen prüfen!**
+    *   Öffne die Datei `neuropersona_app.py`. Finde die Zeile `ORCHESTRATOR_MODULE = "orchestrator_full_qh_v1"` und stelle sicher, dass der Name (`orchestrator_full_qh_v1`) **exakt** dem Dateinamen deines Orchestrator-Skripts entspricht (ohne `.py`). Passe ihn bei Bedarf an!
+    *   Öffne die Datei `orchestrator_full_qh_v1.py`. Finde die Zeile `NEUROPERSONA_CORE_MODULE = "neuropersona_core_quantum_hybrid_v2"` und stelle sicher, dass der Name (`neuropersona_core_quantum_hybrid_v2`) **exakt** dem Dateinamen deines Core-Simulations-Skripts entspricht (ohne `.py`). Passe ihn bei Bedarf an!
 
-Diese Version von NeuroPersona lädt dazu ein, die faszinierenden Wechselwirkungen zwischen simulierter Quantendynamik und klassischer Netzwerkintelligenz zu erforschen. Viel Erfolg bei der weiteren Analyse!
+    **Wenn diese Namen nicht stimmen, kann die App den Orchestrator nicht finden, oder der Orchestrator kann die Simulation nicht starten!**
+
+## Wie starte ich es? ▶️
+
+Es gibt zwei Hauptwege:
+
+1.  **Mit der Benutzeroberfläche (Empfohlen für Einsteiger):**
+    *   Öffne eine Kommandozeile im Projektverzeichnis.
+    *   Gib ein: `streamlit run neuropersona_app.py`
+    *   Dein Webbrowser sollte sich öffnen und die Oberfläche anzeigen.
+    *   Gib dein Thema ein, passe ggf. die Parameter an (oder lass die Standardwerte) und klicke auf "Starte NeuroPersona Analyse".
+    *   Warte, bis die Simulation fertig ist (das kann je nach Einstellungen und Thema eine Weile dauern!). Das Ergebnis erscheint dann auf der Seite.
+
+2.  **Direkt über die Kommandozeile (Für Fortgeschrittene):**
+    *   Öffne eine Kommandozeile im Projektverzeichnis.
+    *   Gib ein: `python orchestrator_full_qh_v1.py`
+    *   Du wirst nach einem Thema gefragt. Gib es ein und drücke Enter.
+    *   Die Simulation läuft im Hintergrund, und du siehst Statusmeldungen. Am Ende wird die finale Antwort ausgegeben.
+    *   Du kannst auch Parameter direkt mitgeben, z.B.:
+        ```bash
+        # Beispiel: Weniger Epochen, höhere Quanten-Lernrate, ohne Plots
+        python orchestrator_full_qh_v1.py --epochs 15 --q_lr 0.015 --no-plots --prompt "Mein Thema hier"
+        ```
+        (Mit `--prompt` wird die interaktive Frage übersprungen.)
+
+## Was kann ich erwarten? 📊
+
+Wenn die Simulation läuft, siehst du Statusmeldungen in der Konsole oder im Statusbereich der Web-App.
+
+Am Ende erhältst du (je nach Einstellungen):
+
+*   **Eine finale Textantwort:** Diese versucht, die Analyseergebnisse zusammenzufassen und auf deine Frage einzugehen, angepasst an den "Charakter" der Simulation. Wenn du einen Programmierauftrag gestellt hast, kann hier auch Python-Code enthalten sein, der von der "Odin"-Persona erstellt wurde.
+*   **Einen HTML-Bericht:** Eine Datei namens `neuropersona_report_MQ...html` wird im Projektverzeichnis gespeichert. Sie enthält eine detailliertere Zusammenfassung und (falls aktiviert) die generierten Diagramme.
+*   **Diagramme (Plots):** Wenn die Option "Plots generieren" aktiviert ist, werden mehrere `.png`-Diagramme in einem Unterordner namens `plots_quantum_node_...` gespeichert. Sie zeigen z.B.:
+    *   Wie sich die Aktivierungen der Knoten über die Zeit ändern.
+    *   Wie sich die Verbindungsgewichte entwickeln.
+    *   Wie sich die "Emotionen" und "Werte" im Netzwerk verändern.
+    *   Statistiken zur Netzwerkstruktur.
+    *   Eine Visualisierung des Netzwerks selbst (nur wenn `networkx` installiert ist).
+*   **Quanten-Logs (Für Experten):** Im Ordner `quantum_logs` werden sehr detaillierte JSON-Dateien gespeichert, die jeden Schritt innerhalb der Quanten-Knoten-Aktivierung protokollieren. Das ist meist nur für die Fehlersuche oder tiefe Analyse relevant.
+*   **Gespeicherter Zustand (Optional):** Wenn "Speichern" aktiviert ist, wird der Endzustand des Netzwerks (inkl. der gelernten Quanten-Parameter) in einer `.json`-Datei gespeichert (z.B. `neuropersona_quantum_node_mq4_state_v2.json`), damit du eine Simulation später fortsetzen ("Laden") kannst.
+
+## Wichtige Hinweise & Haftungsausschluss ⚠️
+
+*   **EXPERIMENTELL:** Dieses Projekt ist hoch experimentell. Die "Quanten"-Aspekte sind eine Simulation und Inspiration, keine exakte Abbildung der Quantenphysik.
+*   **Keine Garantien:** Die Ergebnisse der Simulation (Berichte, Antworten, Diagramme) sind nicht notwendigerweise korrekt, vollständig oder wissenschaftlich fundiert. Sie spiegeln nur den Zustand des simulierten Systems wider.
+*   **Rechenintensiv:** Besonders die Quanten-Knoten-Simulation kann je nach Anzahl der Epochen, Knoten und "Shots" lange dauern und viel Rechenleistung benötigen.
+*   **Fehler möglich:** Wie bei jeder komplexen Software können Fehler auftreten.
+*   **Keine Haftung:** Die Nutzung dieser Software erfolgt auf eigene Gefahr. Es wird keine Haftung für Ergebnisse, Fehler oder mögliche Schäden übernommen.
