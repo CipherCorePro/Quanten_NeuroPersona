@@ -35,7 +35,7 @@ Wenn du das Programm startest (am besten über die Benutzeroberfläche), passier
 3.  **Simulation ("Nachdenken"):** Das Kernstück (`neuropersona_core_...py`) baut das Netzwerk auf und lässt es über viele Runden ("Epochen") laufen. Dabei "lernt" das Netzwerk, passt Verbindungen an und die Denkmodule arbeiten.
 4.  **Analyse & Antwort:** Das System analysiert den Endzustand des Netzwerks. Wenn Gemini verfügbar ist, wird eine finale Antwort formuliert, die versucht, die Erkenntnisse der Simulation widerzuspiegeln. Sonst bekommst du den reinen Analysebericht.
 
-## Das Besondere: Quanten-inspirierte Knoten (vereinfacht) ✨
+## Das Besondere: Quanten-inspirierte Knoten  ✨
 
 *   Normale Computer arbeiten mit Bits: 0 oder 1 (An oder Aus).
 *   Quantencomputer nutzen Qubits: Diese können durch Quanteneffekte gleichzeitig 0 *und* 1 sein (Superposition).
